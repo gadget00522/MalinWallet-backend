@@ -422,6 +422,40 @@ Common HTTP status codes:
 - CORS is enabled for all origins (configure in production)
 - Helmet middleware adds security headers
 
+## Testing
+
+A test script is provided to test all endpoints:
+
+```bash
+./test-api.sh
+```
+
+This will guide you through testing signup, verification, login, and password reset flows.
+
+## Deployment
+
+### Environment Variables for Production
+
+Make sure to set these environment variables in production:
+
+```bash
+PORT=3000
+JWT_SECRET=<strong-random-secret-key>
+SMTP_HOST=<your-smtp-host>
+SMTP_PORT=<your-smtp-port>
+SMTP_USER=<your-smtp-username>
+SMTP_PASS=<your-smtp-password>
+SMTP_FROM=<your-from-email>
+```
+
+### Production Build
+
+```bash
+npm install
+npm run build
+npm start
+```
+
 ## TODO
 
 - [ ] Replace in-memory storage with a proper database
